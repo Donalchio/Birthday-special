@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Open Letter</title>
+
+<link
+rel="stylesheet"
+href="wish.css">
+
+</head>
+
+<body>
+
+<audio
+id="bgmusic"
+loop
+preload="auto">
+
+<source
+src="bad.mp4"
+type="audio/mp4">
+
+</audio>
+
+<img
+class="leftflower"
+src="leftflower.png">
+
+<img
+class="rightflower"
+src="rightflower.png">
+
+<div class="container">
+
+<div class="envelope-wrap">
+
+<img
+class="envelope"
+src="evolope.png"
+onclick="openLetter()">
+
+<div class="tap">
+
+💌 TAP TO OPEN
+
+</div>
+
+</div>
+
+<div class="letter-wrap">
+
+<img
+class="letter"
+src="letter.jpeg">
+
+<div class="message">
+
+HAPPY BIRTHDAY MY BEAUTIFUL GIRL, I JUST WANT YOU TO KNOW THAT HOW MUCH GREATFUL I AM TO HAVE YOU I MY LIFE.I PRAY THAT YOU GET EVERYTHING YOUT HEART DESIRES CUS YOU DESERVE THE WORLD.
+
+I KNOW SOMETIMES I CAN'T MAKE EVERYTHING RIGHT, AND THERE ARE MOMENTS I ACT WEIRD, HURT YOU OR MAKE YOU FEEL BAD I'M REALLY SORRY FOR ALL OF THAT. BUT ONR THING I PROMISE YOU IS I'LL NEVER STOP TRYING TO BECOME BETTER VERSION OF MYSELF. I ALWAYS I WANT TO SEE THAT BEAUTIFUL ON YOUR FACE.
+
+I'LL LOVE, CHERISH YOU, APPRECIATE YOU, AND STAND BY YOUR SIDE THROUGH EVERY SEASON OF LIFE. YOU ARE MY HOME AND MY HAPPIEST PLACE.
+
+EVEN THOUGH I CANT'T BE WITH YOU THIS TIME, SOON WE'LL MEET, MAKE BEAUTIFUL MEMORIES AND WE'LL DO CUTE STUFFS I'M SO SORRY I COULDN'T GO THIS TIME BUT i MISS YOU EVERY MOMENTS EVERY SINGLE TIME. THANK YOU FOR ALWAYS BEING WITH ME AND LOVING ME EVERY SINGLE I'LL FOREVER LOVE YOU THE MOST💕
+
+HAPPY BIRTHDAY ONCE AGAIN TO THE MOST BEAUTIFUL GIRL IN THE WORLD MY CUTE LITTLE HAMSTER, I LOVE YOUU SOOO MUCHHH ❤️
+
+<br><br>
+
+<a
+href="video.html"
+onclick="saveMusic()">
+
+<button
+class="video-btn">
+
+▶ WATCH OUR VIDEOS
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const music=
+
+document.getElementById(
+"bgmusic"
+);
+
+window.onload=()=>{
+
+const saved=
+
+sessionStorage.getItem(
+"musicTime"
+);
+
+if(saved){
+
+music.currentTime=
+Number(saved);
+
+}
+
+music.play()
+.catch(()=>{});
+
+/* keep saving */
+
+setInterval(()=>{
+
+sessionStorage.setItem(
+
+"musicTime",
+
+music.currentTime
+
+);
+
+},250);
+
+};
+
+function openLetter(){
+
+document
+.querySelector(
+".envelope-wrap"
+)
+.style.display=
+"none";
+
+document
+.querySelector(
+".letter-wrap"
+)
+.classList
+.add(
+"show"
+);
+
+}
+
+function saveMusic(){
+
+sessionStorage.setItem(
+
+"musicTime",
+
+music.currentTime
+
+);
+
+}
+
+</script>
+
+</body>
+
+</html>
